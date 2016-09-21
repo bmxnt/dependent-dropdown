@@ -151,7 +151,7 @@
                     }
                 },
                 success: function (data) {
-                    selected = isEmpty(data.selected) ? (self.initVal === false ? null : self.initVal) : data.selected;
+                    selected = isEmpty(data.selected) ? false : true;
                     if (isEmpty(data)) {
                         createOption($el, '', vNullMsg, '');
                     }
@@ -168,7 +168,11 @@
                     if ($el.find('option[value=""]').length > 0) {
                         optCount -= 1;
                     }
-                    $el.trigger('depdrop.change', [vId, $("#" + vId).val(), optCount, self.initVal]);
+
+                    if(selected) {
+                        $el.trigger('depdrop.change', [vId, $("#" + vId).val(), optCount, self.initVal]);
+                    }
+
                     self.parseDisabled();
                 },
                 error: function () {

@@ -12,8 +12,8 @@
     "use strict";
 
     $.fn.depdropLocales['ru'] = {
-        loadingText: 'загрузка ...',
-        placeholder: 'Выбрать ...',
-        emptyMsg: 'Данные не найдены'
+        loadingText: 'Загрузка',
+        placeholder: 'Не выбрано',
+        emptyMsg: 'Не найдено'
     };
 })(window.jQuery);
